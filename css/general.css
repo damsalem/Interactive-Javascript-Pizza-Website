@@ -1,0 +1,105 @@
+/* header image */
+
+html {
+    scroll-behavior: smooth
+}
+header.masthead {
+	position: relative;
+    background: url("../images/pizza-bg.jpg") no-repeat center center;
+	padding-top: 10rem;
+    padding-bottom: 8rem;
+    color: #fff;
+}
+
+.hungry-head  {
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    border-radius: 5px;
+}
+
+/* Create Pizza */
+.create-pizza .primary-btn {
+    color: #fff;
+    background-color: #8ab92d;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .create-pizza .myBtnContainer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .create-pizza .myBtnContainer ul {
+    padding: 0;
+  }
+  
+  .create-pizza .myBtnContainer ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px 30px;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 500;
+  }
+
+  .container {
+    overflow: hidden;
+}
+
+.container h5 {
+    text-align: center;
+    color: #969696
+}
+
+.container img {
+    border-radius: 5px;
+}
+
+/* Make pictures into radio buttons */
+label.menu > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+  }
+  label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:4px solid #93baf9;
+  }
+
+/* Filter buttons */
+.filterDiv {
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* See Your Work */
+.price-top {
+    background-color: #e2e2e2;
+    border-radius: 5px 5px 0 0;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.price-bottom {
+    border: solid 1px #e2e2e2;
+    border-radius: 0 0 5px 5px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.footer {
+    background-color: #e2e2e2;
+}
+
+.footer a {
+    color: #000;
+}
