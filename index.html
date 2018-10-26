@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pizza Pie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/general.css">
+    <!-- END CSS -->
+</head>
+
+<body>
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" style="background-color:#e2e2e2">
+        <a class="navbar-brand" href="#">
+            <img src="./images/pizza-icon.png" alt="" style="width:50px;height:50px" href="#top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="#top">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#create">Create Your Pizza</a></li>
+            <li class="nav-item"><a class="nav-link" href="#work">See Your Work</a></li>
+        </ul>
+        </div>
+    </nav>
+    <!-- End Navbar Area -->
+
+    <!-- Header Masthead -->
+	<header class="masthead text-center" id="top">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="hungry-head col-xl-9 mx-auto my-5 py-2">
+                    <h4 class="text-uppercase">Feeling Hungry?</h4>
+                    <h1 class="mb-5">Create The Pizza Your Stomach Deserves</h1>
+                    <button type="button" class="btn btn-warning text-uppercase mb-2" style="width:200px" onclick=location.href="#create"><strong>Yes, I'm Hungry!</strong></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Masthead -->
+
+    <!-- Start Create-Pizza Area -->
+    <section class="create-pizza my-5 py-5" id="create">
+        <div class="container">
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="menu-content col-lg-10">
+                        <div class="title text-center">
+                            <h1 class="mb-10">Every pizza is a personal pizza,</h1>
+                            <p>If you try hard and believe in yourself!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-warning text-uppercase mb-2" style="width:200px" onclick="getReceipt()"><a style="color:black;text-decoration:none" href="#work"><strong>Build My Pizza</strong></a></button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-warning text-uppercase mb-2" style="width:200px" onclick="clearAll()"><strong>Cancel &amp; Restart</strong></button>
+                    </div>
+                </div>
+
+            <div class="myBtnContainer">
+            <ul>
+                <li class="active" onclick="filterSelection('all')">All</li>
+                <li class="btn" onclick="filterSelection('size')">Size</li>
+                <li class="btn" onclick="filterSelection('meat')">Meat</li>
+                <li class="btn" onclick="filterSelection('veggies')">Veggies</li>
+                <li class="btn" onclick="filterSelection('cheeses')">Cheeses</li>
+                <li class="btn" onclick="filterSelection('sauces')">Sauces</li>
+                <li class="btn" onclick="filterSelection('crusts')">Crusts</li>
+            </ul>
+            </div>
+
+
+            <!-- Pizza Size -->
+            <div class="container filters-content">
+                <form id="frmMenu">
+                    <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all size">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="size" type="radio" name="Size" value="Personal Pizza"/>
+                                    <img src="./images/size-personal.png" alt="" style="width:250px;height:250px">
+                                    <p>Personal Pizza &mdash; $6.00</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filterDiv single-portfolio col-sm-4 all size">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="size" type="radio" name="Size" value="Medium Pizza" checked="checked"/>
+                                    <img src="./images/size-medium.png" alt="" style="width:250px;height:250px">
+                                    <p>Medium Pizza &mdash; $10.00</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filterDiv single-portfolio col-sm-4 all size">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="size" type="radio" name="Size" value="Large Pizza"/>
+                                    <img src="./images/size-large.png" alt="" style="width:250px;height:250px">
+                                    <p>Large Pizza &mdash; $14.00</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filterDiv single-portfolio col-sm-4 all size">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="size" type="radio" name="Size" value="Extra Large Pizza"/>
+                                    <img src="./images/size-xlarge.png" alt="" style="width:250px;height:250px">
+                                    <p>Extra Large Pizza &mdash; $16.00</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- Pizza Meat -->
+                    <div class="filterDiv meat container mt-5 mb-3">
+                            <h5>Your first meat is free, additional meats are $1.00</h5>
+                        </div>
+                    <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Anchovy"/>
+                                <img src="./images/anchovies.jpg" alt="" style="width:250px;height:250px">
+                                <p>Anchovy</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Canadian Bacon"/>
+                                <img src="./images/canadian-bacon.jpg" alt="" style="width:250px;height:250px">
+                                <p>Canadian Bacon</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Chicken"/>
+                                <img src="./images/chicken.jpg" alt="" style="width:250px;height:250px">
+                                <p>Chicken</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Ground Beef"/>
+                                <img src="./images/ground-beef.jpg" alt="" style="width:250px;height:250px">
+                                <p>Ground Beef</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Pepperoni"/>
+                                <img src="./images/pepperoni.jpg" alt="" style="width:250px;height:250px">
+                                <p>Pepperoni</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all meat">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="meat" type="checkbox" name="Meat" value="Sausage"/>
+                                <img src="./images/sausage.jpg" alt="" style="width:250px;height:250px">
+                                <p>Sausage</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Pizza Veg -->
+                    <div class="filterDiv veggies container mt-5 mb-3">
+                            <h5>Your first veggie is free, additional veggies are $1.00</h5>
+                        </div>
+                <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Green Peppers"/>
+                                <img src="./images/green-peppers.jpg" alt="" style="width:250px;height:250px">
+                                <p>Green Peppers</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Jalapenos"/>
+                                <img src="./images/jalapenos.jpg" alt="" style="width:250px;height:250px">
+                                <p>Jalapenos</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Mushrooms"/>
+                                <img src="./images/mushrooms.jpg" alt="" style="width:250px;height:250px">
+                                <p>Mushrooms</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Olives"/>
+                                <img src="./images/olives.jpg" alt="" style="width:250px;height:250px">
+                                <p>Olives</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Onions"/>
+                                <img src="./images/onions.jpg" alt="" style="width:250px;height:250px">
+                                <p>Onions</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Pineapple"/>
+                                <img src="./images/pineapple.jpg" alt="" style="width:250px;height:250px">
+                                <p>Pineapple</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Spinach"/>
+                                <img src="./images/spinach.jpg" alt="" style="width:250px;height:250px">
+                                <p>Spinach</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all veggies">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="veggies" type="checkbox" name="Veggies" value="Tomatoes"/>
+                                <img src="./images/tomatoes.jpg" alt="" style="width:250px;height:250px">
+                                <p>Tomatoes</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Pizza Cheeses -->
+                <div class="filterDiv veggies container mt-5 mb-3"></div>
+                <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all cheeses">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="cheeses" type="radio" name="Cheeses" value="Mozzarella Cheese" checked="checked"/>
+                                <img src="./images/mozzarella-cheese.jpg" alt="" style="width:250px;height:250px">
+                                <p>Mozzarella Cheese</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all cheeses">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="cheeses" type="radio" name="Cheeses" value="Extra Mozzarella"/>
+                                <img src="./images/extra-mozzarella.jpg" alt="" style="width:250px;height:250px">
+                                <p>Extra Mozzarella &mdash; $3.00</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all cheeses">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="cheeses" type="radio" name="Cheeses" value="No Cheese"/>
+                                <img src="./images/no-cheese.jpg" alt="" style="width:250px;height:250px">
+                                <p>No Cheese</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Pizza Sauces -->
+                <div class="filterDiv veggies container mt-5 mb-3"></div>
+                <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all sauces">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="sauces" type="radio" name="Sauces" value="Marinara Sauce" checked="checked"/>
+                                <img src="./images/marinara-sauce.jpg" alt="" style="width:250px;height:250px">
+                                <p>Marinara Sauce</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all sauces">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="sauces" type="radio" name="Sauces" value="Barbecue Sauce"/>
+                                <img src="./images/bbq-sauce.jpg" alt="" style="width:250px;height:250px">
+                                <p>Barbecue Sauce</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all sauces">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="sauces" type="radio" name="Sauces" value="White Sauce"/>
+                                <img src="./images/white-sauce.jpg" alt="" style="width:250px;height:250px">
+                                <p>White Sauce</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all sauces">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="sauces" type="radio" name="Sauces" value="No Sauce"/>
+                                <img src="./images/no-sauce.jpg" alt="" style="width:250px;height:250px">
+                                <p>No Sauce</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Pizza Crusts -->
+                <div class="filterDiv veggies container mt-5 mb-3"></div>
+                <div class="row">
+                        <div class="filterDiv single-portfolio col-sm-4 all crusts">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="crusts" type="radio" name="Crusts" value="House Special Crust" checked="checked"/>
+                                    <img src="./images/house-special-crust.png" alt="" style="width:250px;height:250px">
+                                    <p>House Special Crust</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filterDiv single-portfolio col-sm-4 all crusts">
+                            <div class="item">
+                                <label class="menu">
+                                    <input class="crusts" type="radio" name="Crusts" value="Cheese Stuffed Crust"/>
+                                    <img src="./images/cheese-stuffed-crust.jpg" alt="" style="width:250px;height:250px">
+                                    <p>Cheese Stuffed Crust &mdash; $3.00</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filterDiv single-portfolio col-sm-4 all crusts">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="crusts" type="radio" name="Crusts" value="Garlic Butter Crust"/>
+                                <img src="./images/garlic-crust.jpg" alt="" style="width:250px;height:250px">
+                                <p>Garlic Butter Crust</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all crusts">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="crusts" type="radio" name="Crusts" value="Plain Crust"/>
+                                <img src="./images/plain-crust.jpg" alt="" style="width:250px;height:250px">
+                                <p>Plain Crust</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filterDiv single-portfolio col-sm-4 all crusts">
+                        <div class="item">
+                            <label class="menu">
+                                <input class="crusts" type="radio" name="Crusts" value="Spicy Crust"/>
+                                <img src="./images/spicy-crust.jpg" alt="" style="width:250px;height:250px">
+                                <p>Spicy Crust</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-warning text-uppercase mb-2" style="width:200px" onclick="getReceipt()"><a style="color:black;text-decoration:none" href="#work"><strong>Build My Pizza</strong></a></button>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-warning text-uppercase mb-2" style="width:200px" onclick="clearAll()"><strong>Cancel &amp; Restart</strong></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Create-Pizza Area -->
+
+       <!-- Start Pizza Results Area -->
+       <section class="my-5 py-5" id="work">
+            <div class="container">
+                <div class="row d-flex justify-content-center my-5">
+                    <div class="col-lg-10 text-center">
+                        <h1 class="mb-10">Check Out Your Work</h1>
+                    </div>
+                </div>
+                <div class="price-top row d-flex py-3 justify-content-center mt-5" id="showText1">
+                    <div class="col text-center">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="price-bottom py-4 row d-flex justify-content-center">
+                    <div class="col-md-4 text-center" id="showText2"></div>
+                    <div class="col-md-4 text-center" id="totalPrice"></div>
+                </div>
+                <div class="row d-flex justify-content-center mt-3" id="disappearing-text">
+                    <h4>Oops! Try building a pizza first.</h4>
+                </div>
+            </div>
+        </section>
+        <!-- End Pizza Results Area -->
+
+    <!-- Start Footer Area -->
+
+   <div class="container-fluid">
+        <div class="footer text-center py-4 row">
+            <div class="col-3">
+                <a href="#top">Back to Top</a>
+            </div>
+            <div class="col-9">
+                <a href="https://theamsalems.com/">© 2018 Wishful Copyright: Dani Amsalem</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Area -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./javascript/pizza.js"></script>
+
+</body>
+</html>
