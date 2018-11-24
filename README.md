@@ -1,2 +1,2 @@
 # The Tech Academy JavaScript Coding Projects
-This repository holds more advanced Javascript code as instructed by The Tech Academy.
+This repository holds more advanced Javascript code for a pizza website.
